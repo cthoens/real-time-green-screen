@@ -4,7 +4,11 @@ const uniqueColors = new Set();
 
 async function startCamera() {
     try {
-        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        const devices = await navigator.mediaDevices.enumerateDevices();
+        const videoDevices = devices.filter(device => device.kind === 'videoinput');
+        const deviceId = videoDevices.at(-1).deviceId
+        const constraints = deviceId ? { video: { deviceId: { exact: deviceId } } } : { video: true };
+        const stream = await navigator.mediaDevices.getUserMedia(constraints);
         video.srcObject = stream;
     } catch (error) {
         console.error('Error accessing the camera:', error);
