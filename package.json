@@ -1,0 +1,24 @@
+{
+    "name": "my-frontend-app",
+    "version": "1.0.0",
+    "description": "Frontend-only application using HTML, CSS, TypeScript, and Webpack",
+    "scripts": {
+        "start": "webpack serve --mode development",
+        "build": "webpack --mode production",
+        "clean": "rm -rf dist"
+    },
+    "dependencies": {
+        "ml-kmeans": "^6.0.0"
+    },
+    "devDependencies": {
+        "@webgpu/types": "^0.1.51",
+        "css-loader": "^7.1.2",
+        "html-webpack-plugin": "^5.6.3",
+        "style-loader": "^4.0.0",
+        "ts-loader": "^9.5.1",
+        "typescript": "^5.6.3",
+        "webpack": "^5.96.1",
+        "webpack-cli": "^5.1.4",
+        "webpack-dev-server": "^5.1.0"
+    }
+}

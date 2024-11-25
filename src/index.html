@@ -14,13 +14,16 @@
             padding: 20px;
             background-color: #f4f4f4;
         }
+        #video {
+            display: none;
+        }
         #video-container {
             position: relative;
             width: 640px;
             height: 480px;
             margin-bottom: 20px;
         }
-        video {
+        #webgpu-canvas {
             width: 100%;
             height: auto;
             border: 1px solid #ccc;
@@ -34,10 +37,11 @@
 </head>
 <body>
     <div id="video-container">
-        <video id="video" autoplay playsinline></video>
+        <canvas id="webgpu-canvas"></canvas>
     </div>
+    <video id="video" autoplay></video>
     <div id="counter">Unique Colors: 0</div>
-
-    <script src="app.js"></script>
+    <button id="kmeans-button" title="button">Run K-means</button>
+    <input id="calibrate-cb" type="checkbox" title="calibrate" checked>Calibrate</input>
 </body>
 </html>
